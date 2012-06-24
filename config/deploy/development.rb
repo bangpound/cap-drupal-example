@@ -12,14 +12,13 @@ set :scm_verbose,  true
 # However, it also bypasses drush make's caching system, slowing down 
 # deployments. So, because of this and because you shouldn't be directly 
 # editing production code, only pass working-copy to development environmnents.
-# I put it here in staging only for reference.
 set :make_args, '--working-copy'
 
 # set the branch for the git repo of your make file (optional)
-set :branch, "6.x-1.x-staging"
+set :branch, "6.x-1.x-development"
 
 # Set the deployment directory on the target hosts.
-set :application, "your.appname.staging"
+set :application, "your.appname.development"
 
 # Point your apache web root to this directory for this app
 set :deploy_to, "/path/to/your/app/#{application}"
@@ -31,7 +30,7 @@ set :group, "group_here"
 # The hostnames to deploy to.
 role :web, "example.com", :primary => true
 
-set :drush, "/path/to/local/bin/drush --r=/path/to/www/your.appname.staging/current"
+set :drush, "/path/to/local/bin/drush --r=/path/to/www/your.appname.development/current"
 
 # Stage-specific tasks
 namespace :stage_tasks do

@@ -7,14 +7,6 @@ set :repository,  "git://github.com/youraccount/your_make_file.git"
 set :scm, :git
 set :scm_verbose,  true
 
-# Note: Only set "working-copy" on non-production sites. This flag preserves 
-# scm directories (e.g. .git), allowing you to commit changes to your code.  
-# However, it also bypasses drush make's caching system, slowing down 
-# deployments. So, because of this and because you shouldn't be directly 
-# editing production code, only pass working-copy to development environmnents.
-# I put it here in staging only for reference.
-set :make_args, '--working-copy'
-
 #set the branch for the git repo of your make file (optional)
 set :branch, "6.x-1.x-staging"
 
